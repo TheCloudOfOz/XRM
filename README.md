@@ -2,9 +2,9 @@
 
 Microsoft Dynamics 365 Plugin
 
-## Extensions
+## Extension Methods
 
-### Service Extensions
+### Service Extension Methods
 
 ```csharp
         public static T GetService<T>(this IServiceProvider serviceProvider)
@@ -14,6 +14,19 @@ Microsoft Dynamics 365 Plugin
 ```
 
 #### Usage
+
+##### Without using Extension Method
+
+```csharp
+        public void Execute(IServiceProvider serviceProvider)
+        {
+            this.Context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
+            this.Tracing = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+            this.ServiceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
+        }
+```
+
+##### Using Extension Method
 
 ```csharp
         public void Execute(IServiceProvider serviceProvider)
