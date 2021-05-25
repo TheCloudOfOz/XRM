@@ -14,9 +14,9 @@
         }
 ```
 
-#### Usage
+### Usage
 
-##### Without using Extension Method
+#### Without using Extension Method
 
 ```csharp
         public void Execute(IServiceProvider serviceProvider)
@@ -27,7 +27,7 @@
         }
 ```
 
-##### Using Extension Method
+#### Using Extension Method
 
 ```csharp
         public void Execute(IServiceProvider serviceProvider)
