@@ -28,7 +28,7 @@ namespace XRM
         /// <returns>Returns Default Value if Attribute Value or Image value is null</returns>
         public static T GetAttributeValue<T>(this Entity entity, Entity image, string attributeLogicalName, T defaultValue)
         {
-            return entity.Contains(attributeLogicalName) && entity.GetAttributeValue<T>(attributeLogicalName) != null ? entity.GetAttributeValue<T>(attributeLogicalName) : image.Contains(attributeLogicalName) && image.GetAttributeValue<T>(attributeLogicalName) != null ? image.GetAttributeValue<T>(attributeLogicalName) : defaultValue;
+            return entity.Contains(attributeLogicalName) && entity.GetAttributeValue<T>(attributeLogicalName) != null ? entity.GetAttributeValue<T>(attributeLogicalName) : image.GetAttributeValue<T>(attributeLogicalName, defaultValue);
         }
     }
 }
